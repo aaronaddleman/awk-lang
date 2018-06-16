@@ -1,8 +1,8 @@
 data := data/rows.csv
 
-.PHONY: all hello-world total-column
+.PHONY: all hello-world total-column stats
 
-all: hello-world total-column
+all: hello-world total-column total-population stats
 	@echo "All"
 
 hello-world:
@@ -13,3 +13,6 @@ total-column:
 
 total-population:
 	@awk -F, -f total.awk $(data)
+
+stats:
+	@awk -F, -f stats.awk $(data)
