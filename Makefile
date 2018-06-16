@@ -8,3 +8,6 @@ hello-world:
 
 total-column:
 	@awk -F, '{print $2}' data/rows.csv
+
+total-population:
+	@awk -F, -f total.awk data/rows.csv
